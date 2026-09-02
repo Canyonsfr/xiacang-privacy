@@ -32,14 +32,14 @@
 <body>
   <main>
     <h1>匣藏 隐私政策</h1>
-    <p class="muted">生效日期：2026-08-30 · 联系：<a href="mailto:iclzh@gmail.com">iclzh@gmail.com</a></p>
+    <p class="muted">生效日期：2026-09-02 · 联系：<a href="mailto:iclzh@gmail.com">iclzh@gmail.com</a></p>
     <p>本政策适用于 Chrome 扩展「匣藏 - 跨平台收藏」。本扩展<strong>没有账号系统、云同步或开发者服务器</strong>。收藏默认只保存在你这台电脑的浏览器里。</p>
 
     <h2>我们收集什么</h2>
     <p>开发者<strong>不收集、不接收、不存储</strong>你的任何数据。扩展在你的浏览器本机处理信息。</p>
     <table>
       <tr><th>数据类型</th><th>存放位置</th><th>用途</th></tr>
-      <tr><td>扩展设置（主题、新标签页开关、默认收藏集等）</td><td>本机 chrome.storage.local</td><td>记住选项</td></tr>
+      <tr><td>扩展设置（主题、默认收藏集等）</td><td>本机 chrome.storage.local</td><td>记住选项</td></tr>
       <tr><td>收藏（标题、链接、摘录、图片、标签、备注、收藏集）</td><td>本机 IndexedDB</td><td>本机收藏库</td></tr>
       <tr><td>加密收藏集的密码派生材料</td><td>本机存储；解锁状态仅在当前会话</td><td>保护你加锁的收藏集</td></tr>
       <tr><td>可选的 xAI API Key</td><td>本机 chrome.storage.local</td><td>仅当你主动使用「Grok 摘要」</td></tr>
@@ -47,7 +47,7 @@
     <p>不收集姓名、邮箱、电话、精确位置、支付信息、密码（加密收藏集密码只在本机用于解锁，不会上传）、通讯内容、完整浏览历史。</p>
 
     <h2>如何使用</h2>
-    <p>仅用于单一用途：把你选择的网页、图片和文本收藏到本机，并用收藏集、标签、流程、快捷键、侧边栏加以整理。不用于广告、分析、画像或信贷。目前<strong>没有账户登录，也没有跨设备云同步</strong>。</p>
+    <p>仅用于单一用途：把你选择的网页、图片和文本收藏到本机，并用收藏集、标签、流程、快捷键、侧边栏加以整理。不覆盖新标签页，不修改默认搜索引擎，不在搜索结果页注入内容。不用于广告、分析、画像或信贷。目前<strong>没有账户登录，也没有跨设备云同步</strong>。</p>
 
     <h2>是否与第三方共享</h2>
     <p><strong>默认否。</strong>开发者没有后端，不会出售或传输你的收藏。</p>
@@ -65,8 +65,7 @@
       <li><code>contextMenus</code>：右键收藏网页、链接、图片、选中文字。</li>
       <li><code>sidePanel</code>：在侧边栏打开收藏库。</li>
       <li><code>declarativeNetRequestWithHostAccess</code>：仅为扩展内嵌的 YouTube 播放补 Referer，不拦截你的日常上网。</li>
-      <li>访问所有网址：因为你可以收藏任意网站；内容脚本只用于收藏、快捷键，以及（可选）在搜索结果旁显示本机命中。不会把页面内容发给开发者。</li>
-      <li>新标签页：清单里声明了覆盖新标签页，但<strong>默认关闭</strong>。只有你在选项里打开「接管浏览器新标签页」后，新标签才会显示收藏库；关闭时回到 Chrome 默认新标签页。</li>
+      <li>访问所有网址：因为你可以收藏任意网站；内容脚本只用于收藏确认框和快捷键。不会把页面内容发给开发者。</li>
     </ul>
 
     <h2>Cookie 与登录态</h2>
@@ -84,8 +83,8 @@
     <hr />
     <div class="en">
       <h1>Privacy Policy</h1>
-      <p class="muted">Effective 2026-08-30 · <a href="mailto:iclzh@gmail.com">iclzh@gmail.com</a></p>
-      <p>XiaCang (“匣藏”) is a local bookmarking extension. The developer operates no servers, accounts, or cloud sync. Settings stay in <code>chrome.storage.local</code>. Your saved pages, images, and notes stay in IndexedDB on your device. Nothing is uploaded, sold, or used for ads.</p>
+      <p class="muted">Effective 2026-09-02 · <a href="mailto:iclzh@gmail.com">iclzh@gmail.com</a></p>
+      <p>XiaCang (“匣藏”) is a local bookmarking extension. The developer operates no servers, accounts, or cloud sync. It does not override the new tab page, change the default search engine, or inject into search results. Settings stay in <code>chrome.storage.local</code>. Your saved pages, images, and notes stay in IndexedDB on your device. Nothing is uploaded, sold, or used for ads.</p>
       <p>Optional: if you paste your own xAI API key and click “Grok summary”, the item’s title, URL, and a text snippet are sent to <code>api.x.ai</code> to suggest a title and tags. YouTube oEmbed/embed requests may run only for YouTube links you saved. No remote code is executed.</p>
     </div>
   </main>
