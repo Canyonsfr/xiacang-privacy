@@ -3,89 +3,214 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>隐私政策 · 匣藏</title>
+  <title>Privacy Policy · 匣藏 XiaCang</title>
   <style>
     :root { color-scheme: light dark; }
     body {
       margin: 0;
-      font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", sans-serif;
+      font: 16px/1.7 -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", sans-serif;
       background: #161310;
       color: #f3ece6;
     }
-    main {
-      max-width: 760px;
-      margin: 0 auto;
-      padding: 48px 20px 80px;
-    }
+    main { max-width: 800px; margin: 0 auto; padding: 48px 20px 96px; }
     h1 { font-size: 28px; margin: 0 0 8px; }
-    h2 { font-size: 18px; margin: 32px 0 10px; }
+    h2 { font-size: 18px; margin: 36px 0 10px; }
+    h3 { font-size: 16px; margin: 22px 0 8px; }
     .muted { color: #b5a79c; font-size: 14px; }
     a { color: #e08a4c; }
-    table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    table { width: 100%; border-collapse: collapse; font-size: 14px; margin: 12px 0 16px; }
     th, td { border: 1px solid #3a332e; padding: 8px 10px; text-align: left; vertical-align: top; }
     th { background: #241e1a; }
-    hr { border: 0; border-top: 1px solid #3a332e; margin: 48px 0; }
-    .en { opacity: 0.92; }
+    hr { border: 0; border-top: 1px solid #3a332e; margin: 56px 0; }
     code { font-size: 0.92em; }
+    .box { background: #241e1a; border: 1px solid #3a332e; border-radius: 10px; padding: 14px 16px; margin: 16px 0; }
+    ul { padding-left: 1.3em; }
+    li { margin: 6px 0; }
+    .toc a { margin-right: 12px; }
   </style>
 </head>
 <body>
   <main>
     <h1>匣藏 隐私政策</h1>
-    <p class="muted">生效日期：2026-09-02 · 联系：<a href="mailto:iclzh@gmail.com">iclzh@gmail.com</a></p>
-    <p>本政策适用于 Chrome 扩展「匣藏 - 跨平台收藏」。本扩展<strong>没有账号系统、云同步或开发者服务器</strong>。收藏默认只保存在你这台电脑的浏览器里。</p>
+    <p class="muted">生效日期：2026-09-05 · 上次更新：2026-09-05 · 开发者联系：<a href="mailto:iclzh@gmail.com">iclzh@gmail.com</a></p>
+    <p class="box"><strong>一句话说明：</strong>匣藏只在你的电脑上运行。收藏和设置只保存在这台电脑的浏览器里。开发者没有服务器、没有账号系统、没有云同步，也不会把你的数据发到云端处理、出售或用于广告。</p>
+    <p>本政策适用于 Chrome 扩展「匣藏 - 跨平台收藏」（扩展 ID：<code>jhhfpbbmjkneelmffnkghbjkkogmhclo</code>）。名称里的「跨平台」是指你可以收藏任意网站上的内容，<strong>不是</strong>跨设备云同步。</p>
+    <p class="toc muted">本页同时提供完整中文和完整英文。Chrome Web Store 要求：凡处理用户数据的产品，隐私政策必须详细说明<strong>收集、处理、存储、共享</strong>，且不得省略任一部分。</p>
 
-    <h2>我们收集什么</h2>
-    <p>开发者<strong>不收集、不接收、不存储</strong>你的任何数据。扩展在你的浏览器本机处理信息。</p>
+    <h2>1. 数据控制者</h2>
+    <p>本扩展由独立开发者提供，不隶属任何公司云服务。开发者不运营后端、数据库或分析平台。联系邮箱：<a href="mailto:iclzh@gmail.com">iclzh@gmail.com</a>。</p>
+
+    <h2>2. 收集（Collection）</h2>
+    <p>扩展会在<strong>你主动收藏</strong>时，在本机读取并保存你选择保存的内容。这属于 Chrome Web Store 所称的「处理用户数据」（网站内容），因此必须公布本政策。开发者本人<strong>接收不到</strong>这些数据。</p>
     <table>
-      <tr><th>数据类型</th><th>存放位置</th><th>用途</th></tr>
-      <tr><td>扩展设置（主题、默认收藏集等）</td><td>本机 chrome.storage.local</td><td>记住选项</td></tr>
-      <tr><td>收藏（标题、链接、摘录、图片、标签、备注、收藏集）</td><td>本机 IndexedDB</td><td>本机收藏库</td></tr>
-      <tr><td>加密收藏集的密码派生材料</td><td>本机存储；解锁状态仅在当前会话</td><td>保护你加锁的收藏集</td></tr>
-      <tr><td>可选的 xAI API Key</td><td>本机 chrome.storage.local</td><td>仅当你主动使用「Grok 摘要」</td></tr>
+      <tr><th>数据类型</th><th>来源</th><th>是否必须</th></tr>
+      <tr><td>网页标题、网址、简介、封面图地址、网站图标地址</td><td>你正在收藏的当前页的公开信息</td><td>收藏网页时需要</td></tr>
+      <tr><td>你选中的文字、你右键的图片地址或图片文件</td><td>你主动选择收藏的内容</td><td>收藏文本/图片时需要</td></tr>
+      <tr><td>标签、备注、所属收藏集、快捷键、置顶状态</td><td>你输入或整理时产生</td><td>可选</td></tr>
+      <tr><td>扩展设置（主题、默认收藏集、显示模式等）</td><td>选项页</td><td>记住你的偏好</td></tr>
+      <tr><td>加密收藏集的密码派生材料</td><td>你为某个收藏集设置的密码</td><td>仅当你使用加密收藏集</td></tr>
     </table>
-    <p>不收集姓名、邮箱、电话、精确位置、支付信息、密码（加密收藏集密码只在本机用于解锁，不会上传）、通讯内容、完整浏览历史。</p>
+    <p>扩展<strong>不收集</strong>：姓名、电子邮箱、电话、精确位置、支付信息、政府身份证件、健康信息、其它网站的 Cookie / 密码 / 登录态、完整浏览历史、通讯内容、广告标识符。不会在后台静默抓取你访问过的每一个网页。</p>
+    <p>内容脚本只在你打开的 http/https 页面上运行，用途仅限：显示收藏确认框、响应你自己设定的快捷键、在你点击收藏时读取当前页公开元数据。不会把页面全文发给任何人。</p>
 
-    <h2>如何使用</h2>
-    <p>仅用于单一用途：把你选择的网页、图片和文本收藏到本机，并用收藏集、标签、流程、快捷键、侧边栏加以整理。不覆盖新标签页，不修改默认搜索引擎，不在搜索结果页注入内容。不用于广告、分析、画像或信贷。目前<strong>没有账户登录，也没有跨设备云同步</strong>。</p>
-
-    <h2>是否与第三方共享</h2>
-    <p><strong>默认否。</strong>开发者没有后端，不会出售或传输你的收藏。</p>
-    <p>只有在你主动操作时，才可能向第三方发出请求：</p>
+    <h2>3. 处理（Processing）</h2>
+    <p>所有处理都在你的浏览器进程里完成本地计算，不经过开发者服务器，也不调用第三方云 API 来整理收藏。</p>
     <ul>
-      <li>点「Grok 摘要」且你已填写自己的 xAI API Key：会把该条收藏的标题、链接和正文片段发到 <code>api.x.ai</code>，用于生成标题和标签建议。Key 和内容都不会发到开发者。</li>
-      <li>收藏 YouTube 链接时：可能请求 YouTube oEmbed 以补全标题和封面；在收藏库内嵌播放时，会为嵌入请求补上 YouTube 所需的 Referer。</li>
-      <li>你自己打开已收藏的链接时：就是普通访问该网站。</li>
+      <li>把你选择的标题、链接、摘录、图片写入本机收藏库</li>
+      <li>按收藏集、标签、流程规则在本机分类、搜索、排序、置顶</li>
+      <li>在本机渲染 Markdown 备注、生成二维码</li>
+      <li>对加密收藏集在本机做密码派生与加解锁（解锁状态只存在当前浏览器会话）</li>
+      <li>回收站在本机保留 15 天后自动删除</li>
+      <li>网站图标若没有来自原网页的地址，则在本机生成字母图标，不向 Google 或其它图标服务查询</li>
     </ul>
+    <p>处理目的只有一个：向你提供本机收藏功能。不用于广告、分析、画像、个性化推荐、信贷或放贷评估，也不用于改进开发者的其它产品。</p>
+    <p>本扩展遵守 Chrome Web Store User Data Policy（含 Limited Use）：用户数据的使用仅限于已披露的单一用途。</p>
 
-    <h2>权限</h2>
+    <h2>4. 存储（Storage）</h2>
+    <table>
+      <tr><th>存什么</th><th>存在哪里</th><th>是否离开本机</th><th>保留多久</th></tr>
+      <tr><td>收藏条目、收藏集、流程、图片数据</td><td>本机 IndexedDB（数据库名 xiacang）</td><td>否</td><td>直到你删除、清空回收站，或卸载扩展</td></tr>
+      <tr><td>扩展设置</td><td>本机 chrome.storage.local</td><td>否</td><td>直到你更改或卸载</td></tr>
+      <tr><td>加密收藏集解锁状态</td><td>本机 chrome.storage.session</td><td>否</td><td>关闭浏览器即失效</td></tr>
+      <tr><td>你导出的 JSON / 书签 / 文件夹备份</td><td>你在本机选择的路径</td><td>否（除非你自己把文件拷走）</td><td>由你决定</td></tr>
+    </table>
+    <p>不使用 <code>chrome.storage.sync</code>，因此数据不会通过 Google 账号同步到其它设备。开发者没有云盘或远程数据库。</p>
+    <p>卸载扩展后，Chrome 会删除该扩展的 IndexedDB 与 chrome.storage 数据。卸载前请先自行导出备份，否则无法恢复。</p>
+    <p>安全措施：数据只写在你控制的设备上；加密收藏集密码不上传；扩展包内不包含远程脚本。设备本身的安全（锁屏、系统账户）由你负责。</p>
+
+    <h2>5. 共享（Sharing）</h2>
+    <p><strong>开发者不会把你的数据共享、出售、出租或转让给任何第三方。</strong>没有广告商、没有分析 SDK、没有崩溃统计、没有开发者自有服务器。</p>
+    <p>默认情况下，扩展不会为了提供收藏功能而把标题、网址、正文或图片发送给任何第三方。</p>
+    <p>只有在<strong>你自己操作</strong>时，浏览器才可能向其它网站发请求（这与点击一个普通书签相同），这些请求不是开发者收集数据：</p>
+    <table>
+      <tr><th>情形</th><th>可能接触数据的一方</th><th>发送什么</th><th>是否默认发生</th></tr>
+      <tr><td>你打开已收藏的链接</td><td>该网站</td><td>普通网页访问</td><td>否，需你点击</td></tr>
+      <tr><td>你在收藏库里播放已收藏的视频</td><td>YouTube / 哔哩哔哩 / 优酷等视频平台</td><td>该视频的嵌入播放请求</td><td>否，需你点击播放</td></tr>
+      <tr><td>某条收藏保存了远程封面图或原站图标地址</td><td>该图片所在的原网站</td><td>浏览器加载该图片</td><td>仅当该条收藏本身带有远程图片地址</td></tr>
+      <tr><td>你把备份文件发给别人或传到网盘</td><td>你选择的接收方</td><td>你导出的文件</td><td>否</td></tr>
+    </table>
+    <p>扩展内嵌播放 YouTube 时，仅为扩展自己发起的嵌入请求补上 YouTube 需要的 Referer，不修改你日常上网的其它请求。</p>
+    <p>法律要求、保护用户免受欺诈/恶意软件，或经你明确同意的资产转让，属于 Chrome Web Store Limited Use 允许的例外；除此之外禁止转让用户数据。</p>
+
+    <h2>6. 权限为什么需要</h2>
     <ul>
-      <li><code>storage</code> / <code>unlimitedStorage</code>：本机保存设置和收藏（含图片），不上传。</li>
-      <li><code>activeTab</code> / <code>tabs</code> / <code>scripting</code>：读取你正在收藏的当前页标题、链接、封面，并显示收藏确认框。</li>
+      <li><code>storage</code> / <code>unlimitedStorage</code>：在本机保存设置和收藏（含图片）。</li>
+      <li><code>activeTab</code> / <code>tabs</code> / <code>scripting</code>：只在你收藏时读取当前页标题、链接、封面，并显示确认框。</li>
       <li><code>contextMenus</code>：右键收藏网页、链接、图片、选中文字。</li>
-      <li><code>sidePanel</code>：在侧边栏打开收藏库。</li>
-      <li><code>declarativeNetRequestWithHostAccess</code>：仅为扩展内嵌的 YouTube 播放补 Referer，不拦截你的日常上网。</li>
-      <li>访问所有网址：因为你可以收藏任意网站；内容脚本只用于收藏确认框和快捷键。不会把页面内容发给开发者。</li>
+      <li><code>sidePanel</code>：在侧边栏打开本机收藏库。</li>
+      <li><code>declarativeNetRequestWithHostAccess</code>：仅为扩展内嵌 YouTube 播放补 Referer。</li>
+      <li>访问所有网址：因为你可以收藏任意网站；不是为了监控你的上网，也不会把页面发给开发者。</li>
     </ul>
 
-    <h2>Cookie 与登录态</h2>
-    <p>扩展不提取、导出或上传你在其它网站的 Cookie 或密码。收藏时只读取你允许保存的当前页公开信息（标题、链接、简介、封面、你选中的文字或图片）。</p>
+    <h2>7. 你的控制权</h2>
+    <ul>
+      <li>随时编辑或删除单条收藏；删除后进入回收站，15 天后自动清除，也可立即彻底删除。</li>
+      <li>选项页可导出 / 导入 JSON 备份，或备份到本地文件夹。</li>
+      <li>卸载扩展即删除本机扩展数据。</li>
+      <li>隐私问题或删除协助：<a href="mailto:iclzh@gmail.com">iclzh@gmail.com</a>。</li>
+    </ul>
 
-    <h2>备份与导出</h2>
-    <p>导出 JSON、书签 HTML 或备份到本地文件夹，都由你在本机选择路径。开发者无法看到这些文件。</p>
+    <h2>8. 儿童</h2>
+    <p>本扩展不面向 13 岁以下儿童，不故意收集儿童的个人数据。</p>
 
-    <h2>远程代码</h2>
-    <p>不加载远程脚本。全部代码都在商店安装包内。可选的 Grok 调用只解析 JSON 文本建议，不会执行返回的代码。</p>
+    <h2>9. 政策变更</h2>
+    <p>若数据处理方式发生变化，我们会更新本页日期并在扩展更新说明中提示。继续使用更新后的扩展即表示你知悉更新后的政策。重大变更会尽量通过扩展内说明提示。</p>
 
-    <h2>联系</h2>
+    <h2>10. 联系</h2>
     <p>隐私问题请发邮件至 <a href="mailto:iclzh@gmail.com">iclzh@gmail.com</a>。</p>
+    <p>本政策公开地址（请填写在 Chrome 网上应用店「隐私政策」栏，不要只写在描述里）：<a href="https://canyonsfr.github.io/xiacang-privacy/">https://canyonsfr.github.io/xiacang-privacy/</a></p>
 
     <hr />
-    <div class="en">
-      <h1>Privacy Policy</h1>
-      <p class="muted">Effective 2026-09-02 · <a href="mailto:iclzh@gmail.com">iclzh@gmail.com</a></p>
-      <p>XiaCang (“匣藏”) is a local bookmarking extension. The developer operates no servers, accounts, or cloud sync. It does not override the new tab page, change the default search engine, or inject into search results. Settings stay in <code>chrome.storage.local</code>. Your saved pages, images, and notes stay in IndexedDB on your device. Nothing is uploaded, sold, or used for ads.</p>
-      <p>Optional: if you paste your own xAI API key and click “Grok summary”, the item’s title, URL, and a text snippet are sent to <code>api.x.ai</code> to suggest a title and tags. YouTube oEmbed/embed requests may run only for YouTube links you saved. No remote code is executed.</p>
+
+    <div class="en" lang="en">
+      <h1>XiaCang Privacy Policy</h1>
+      <p class="muted">Effective: 2026-09-05 · Last updated: 2026-09-05 · Contact: <a href="mailto:iclzh@gmail.com">iclzh@gmail.com</a></p>
+      <p class="box"><strong>Summary:</strong> XiaCang (“匣藏”) runs only on your device. Saved items and settings stay in your local browser. The developer operates no servers, accounts, or cloud sync, and does not send your data to the cloud for processing, sale, advertising, or analytics.</p>
+      <p>This policy applies to the Chrome extension “匣藏 - 跨平台收藏” (ID <code>jhhfpbbmjkneelmffnkghbjkkogmhclo</code>). “Cross-platform” means you may save content from any website. It does <strong>not</strong> mean cloud sync across devices.</p>
+      <p>Chrome Web Store policy: if a product handles user data, the privacy policy must comprehensively disclose <strong>collection, processing, storage, and sharing</strong>, including every party with whom data is shared. This English section is complete, not a summary.</p>
+
+      <h2>1. Data controller</h2>
+      <p>The extension is provided by an independent developer. There is no company backend, hosted database, or analytics platform. Contact: <a href="mailto:iclzh@gmail.com">iclzh@gmail.com</a>.</p>
+
+      <h2>2. Collection</h2>
+      <p>When you choose to save an item, the extension reads and stores the content you selected, on your device. That is “handling user data” (website content) under Chrome Web Store rules, so this policy is required. The developer <strong>does not receive</strong> this data.</p>
+      <table>
+        <tr><th>Data</th><th>Source</th><th>Required?</th></tr>
+        <tr><td>Page title, URL, description, cover image URL, site icon URL</td><td>Public metadata of the page you are saving</td><td>When saving a page</td></tr>
+        <tr><td>Selected text; image URL or image file you chose</td><td>Content you explicitly save</td><td>When saving text/images</td></tr>
+        <tr><td>Tags, notes, collection, shortcut, pin state</td><td>Your input and organization</td><td>Optional</td></tr>
+        <tr><td>Settings (theme, default collection, view mode)</td><td>Options page</td><td>To remember preferences</td></tr>
+        <tr><td>Password-derived material for locked collections</td><td>A password you set</td><td>Only if you use locked collections</td></tr>
+      </table>
+      <p>We do <strong>not</strong> collect: name, email address, phone number, precise location, payment data, government IDs, health data, cookies / passwords / sessions of other sites, full browsing history, communications, or advertising IDs. The extension does not silently scrape every page you visit.</p>
+      <p>Content scripts run on http/https pages only to show the save confirmation, honor shortcuts you configured, and read public metadata when you save. Page content is not sent to anyone.</p>
+
+      <h2>3. Processing</h2>
+      <p>All processing is local computation inside your browser. Nothing is sent to a developer server or to a third-party cloud API to organize your library.</p>
+      <ul>
+        <li>Write the title, URL, excerpt, and images you chose into the local library</li>
+        <li>Organize, search, sort, and pin items locally by collections, tags, and rules</li>
+        <li>Render Markdown notes and generate QR codes locally</li>
+        <li>Derive and verify lock passwords locally (unlock state lives only in the current browser session)</li>
+        <li>Keep deleted items in a local trash for 15 days, then delete them</li>
+        <li>If a site icon URL is missing, generate a letter icon locally — no Google (or other) favicon service is queried</li>
+      </ul>
+      <p>The only purpose is the disclosed single purpose: local bookmarking. Data is not used for ads, analytics, profiling, personalization, credit, lending, or other products.</p>
+      <p>Use of information complies with the Chrome Web Store User Data Policy, including the Limited Use requirements.</p>
+
+      <h2>4. Storage</h2>
+      <table>
+        <tr><th>What</th><th>Where</th><th>Leaves the device?</th><th>Retention</th></tr>
+        <tr><td>Items, collections, rules, image data</td><td>IndexedDB on this device (database name xiacang)</td><td>No</td><td>Until you delete it, empty trash, or uninstall</td></tr>
+        <tr><td>Settings</td><td>chrome.storage.local</td><td>No</td><td>Until you change it or uninstall</td></tr>
+        <tr><td>Unlock state for locked collections</td><td>chrome.storage.session</td><td>No</td><td>Ends when the browser session ends</td></tr>
+        <tr><td>JSON / bookmark / folder backups you export</td><td>A path you choose on this device</td><td>No, unless you copy the file yourself</td><td>You decide</td></tr>
+      </table>
+      <p>The extension does not use <code>chrome.storage.sync</code>, so data is not synced to other devices through a Google Account. The developer has no cloud drive or remote database.</p>
+      <p>Uninstalling the extension deletes its IndexedDB and chrome.storage data. Export a backup first if you want to keep your library.</p>
+      <p>Security: data stays on a device you control; lock passwords are not uploaded; the store package contains no remote code. Device security (lock screen, OS account) is your responsibility.</p>
+
+      <h2>5. Sharing</h2>
+      <p><strong>The developer does not share, sell, rent, or transfer your data to any third party.</strong> There are no advertisers, analytics SDKs, crash reporters, or developer-operated servers.</p>
+      <p>By default, the extension does not send titles, URLs, body text, or images to any third party in order to provide bookmarking.</p>
+      <p>The browser may contact other websites only when <strong>you</strong> take an action (the same as opening a normal bookmark). Those requests are not developer collection:</p>
+      <table>
+        <tr><th>Action</th><th>Party</th><th>What is sent</th><th>Default?</th></tr>
+        <tr><td>You open a saved link</td><td>That website</td><td>A normal page visit</td><td>No — you click</td></tr>
+        <tr><td>You play a saved video in the library</td><td>YouTube / Bilibili / Youku, etc.</td><td>The embed request for that video</td><td>No — you click play</td></tr>
+        <tr><td>An item already stores a remote cover or original-site icon URL</td><td>The site that hosts that image</td><td>The browser loads the image</td><td>Only if that item has a remote image URL</td></tr>
+        <tr><td>You send an exported backup to someone else</td><td>The recipient you chose</td><td>The file you exported</td><td>No</td></tr>
+      </table>
+      <p>For in-library YouTube playback, the extension only adds the Referer YouTube requires on embed requests initiated by the extension. It does not rewrite your ordinary browsing.</p>
+      <p>Transfers required by law, to protect against malware/fraud, or as part of a sale of assets with your explicit prior consent, are the Limited Use exceptions. All other transfers are prohibited.</p>
+
+      <h2>6. Why permissions are used</h2>
+      <ul>
+        <li><code>storage</code> / <code>unlimitedStorage</code>: save settings and items (including images) on device.</li>
+        <li><code>activeTab</code> / <code>tabs</code> / <code>scripting</code>: read title, URL, and cover of the page you are saving, and show the confirmation UI.</li>
+        <li><code>contextMenus</code>: right-click to save a page, link, image, or selection.</li>
+        <li><code>sidePanel</code>: open the local library in the side panel.</li>
+        <li><code>declarativeNetRequestWithHostAccess</code>: set Referer only for extension-initiated YouTube embeds.</li>
+        <li>Host access to all URLs: you may save from any site. This is not browsing surveillance and page content is not sent to the developer.</li>
+      </ul>
+
+      <h2>7. Your controls</h2>
+      <ul>
+        <li>Edit or delete any item. Deleted items go to Trash for 15 days, or you can delete them immediately.</li>
+        <li>Export / import JSON backups, or write a backup to a local folder, from Options.</li>
+        <li>Uninstalling removes the extension’s local data.</li>
+        <li>Privacy requests: <a href="mailto:iclzh@gmail.com">iclzh@gmail.com</a>.</li>
+      </ul>
+
+      <h2>8. Children</h2>
+      <p>The extension is not directed at children under 13 and does not knowingly collect their personal data.</p>
+
+      <h2>9. Changes</h2>
+      <p>If data practices change, this page and its date will be updated, and the extension changelog will note the change. Using an updated version means you have been informed of the updated policy. Material changes will also be described in-product when practical.</p>
+
+      <h2>10. Contact</h2>
+      <p>Email <a href="mailto:iclzh@gmail.com">iclzh@gmail.com</a>.</p>
+      <p>Public URL (must be entered in the Chrome Web Store Privacy Policy field, not only in the description): <a href="https://canyonsfr.github.io/xiacang-privacy/">https://canyonsfr.github.io/xiacang-privacy/</a></p>
     </div>
   </main>
 </body>
