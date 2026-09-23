@@ -32,7 +32,7 @@
 <body>
   <main>
     <h1>匣藏 隐私政策</h1>
-    <p class="muted">生效日期：2026-09-05 · 上次更新：2026-09-05 · 开发者联系：<a href="mailto:iclzh@gmail.com">iclzh@gmail.com</a></p>
+    <p class="muted">生效日期：2026-09-05 · 上次更新：2026-09-22 · 开发者联系：<a href="mailto:iclzh@gmail.com">iclzh@gmail.com</a></p>
     <p class="box"><strong>一句话说明：</strong>匣藏只在你的电脑上运行。收藏和设置只保存在这台电脑的浏览器里。开发者没有服务器、没有账号系统、没有云同步，也不会把你的数据发到云端处理、出售或用于广告。</p>
     <p>本政策适用于 Chrome 扩展「匣藏 - 跨平台收藏」（扩展 ID：<code>jhhfpbbmjkneelmffnkghbjkkogmhclo</code>）。名称里的「跨平台」是指你可以收藏任意网站上的内容，<strong>不是</strong>跨设备云同步。</p>
     <p class="toc muted">本页同时提供完整中文和完整英文。Chrome Web Store 要求：凡处理用户数据的产品，隐私政策必须详细说明<strong>收集、处理、存储、共享</strong>，且不得省略任一部分。</p>
@@ -62,6 +62,8 @@
       <li>对加密收藏集在本机做密码派生与加解锁（解锁状态只存在当前浏览器会话）</li>
       <li>回收站在本机保留 15 天后自动删除</li>
       <li>网站图标若没有来自原网页的地址，则在本机生成字母图标，不向 Google 或其它图标服务查询</li>
+      <li>没有封面的 YouTube 链接，按视频编号在本地拼出 <code>i.ytimg.com</code> 的封面地址并写入这条收藏。打开收藏库时，浏览器会向 YouTube 加载这张图。不调用 oEmbed，也不把链接发给其它接口</li>
+      <li>没有封面的 B 站视频链接，在你收藏、导入，或第一次打开收藏库补旧记录时，向 <code>api.bilibili.com</code> 的公开视频信息接口查询一次。只发送 BV 号或 av 号，用来取得封面图片地址并存在本机。之后打开收藏库时，浏览器向 <code>hdslb.com</code> 加载这张图，且不发送来源页，否则 B 站会拒绝显示</li>
     </ul>
     <p>处理目的只有一个：向你提供本机收藏功能。不用于广告、分析、画像、个性化推荐、信贷或放贷评估，也不用于改进开发者的其它产品。</p>
     <p>本扩展遵守 Chrome Web Store User Data Policy（含 Limited Use）：用户数据的使用仅限于已披露的单一用途。</p>
@@ -69,7 +71,7 @@
     <h2>4. 存储（Storage）</h2>
     <table>
       <tr><th>存什么</th><th>存在哪里</th><th>是否离开本机</th><th>保留多久</th></tr>
-      <tr><td>收藏条目、收藏集、流程、图片数据</td><td>本机 IndexedDB（数据库名 xiacang）</td><td>否</td><td>直到你删除、清空回收站，或卸载扩展</td></tr>
+      <tr><td>收藏条目、收藏集、流程、图片数据</td><td>本机 IndexedDB（数据库名 xiacang）</td><td>否</td><td>直到你删除、在设置里清空所有收集、清空回收站，或卸载扩展</td></tr>
       <tr><td>扩展设置</td><td>本机 chrome.storage.local</td><td>否</td><td>直到你更改或卸载</td></tr>
       <tr><td>加密收藏集解锁状态</td><td>本机 chrome.storage.session</td><td>否</td><td>关闭浏览器即失效</td></tr>
       <tr><td>你导出的 JSON / 书签 / 文件夹备份</td><td>你在本机选择的路径</td><td>否（除非你自己把文件拷走）</td><td>由你决定</td></tr>
@@ -87,6 +89,7 @@
       <tr><td>你打开已收藏的链接</td><td>该网站</td><td>普通网页访问</td><td>否，需你点击</td></tr>
       <tr><td>你在收藏库里播放已收藏的视频</td><td>YouTube / 哔哩哔哩 / 优酷等视频平台</td><td>该视频的嵌入播放请求</td><td>否，需你点击播放</td></tr>
       <tr><td>某条收藏保存了远程封面图或原站图标地址</td><td>该图片所在的原网站</td><td>浏览器加载该图片</td><td>仅当该条收藏本身带有远程图片地址</td></tr>
+      <tr><td>你收藏或导入一条还没有封面的 B 站视频，或第一次打开收藏库时补这类旧记录</td><td>哔哩哔哩公开接口 api.bilibili.com</td><td>视频的 BV 号或 av 号</td><td>否，只在补封面时发生一次</td></tr>
       <tr><td>你把备份文件发给别人或传到网盘</td><td>你选择的接收方</td><td>你导出的文件</td><td>否</td></tr>
     </table>
     <p>扩展内嵌播放 YouTube 时，仅为扩展自己发起的嵌入请求补上 YouTube 需要的 Referer，不修改你日常上网的其它请求。</p>
@@ -105,6 +108,7 @@
     <h2>7. 你的控制权</h2>
     <ul>
       <li>随时编辑或删除单条收藏；删除后进入回收站，15 天后自动清除，也可立即彻底删除。</li>
+      <li>设置里的「清空所有收集」会永久删除全部收藏、回收站和本机页面截图。需要确认两次，并等待 10 秒。收藏集、流程和设置会保留。</li>
       <li>选项页可导出 / 导入 JSON 备份，或备份到本地文件夹。</li>
       <li>卸载扩展即删除本机扩展数据。</li>
       <li>隐私问题或删除协助：<a href="mailto:iclzh@gmail.com">iclzh@gmail.com</a>。</li>
@@ -124,7 +128,7 @@
 
     <div class="en" lang="en">
       <h1>XiaCang Privacy Policy</h1>
-      <p class="muted">Effective: 2026-09-05 · Last updated: 2026-09-05 · Contact: <a href="mailto:iclzh@gmail.com">iclzh@gmail.com</a></p>
+      <p class="muted">Effective: 2026-09-05 · Last updated: 2026-09-22 · Contact: <a href="mailto:iclzh@gmail.com">iclzh@gmail.com</a></p>
       <p class="box"><strong>Summary:</strong> XiaCang (“匣藏”) runs only on your device. Saved items and settings stay in your local browser. The developer operates no servers, accounts, or cloud sync, and does not send your data to the cloud for processing, sale, advertising, or analytics.</p>
       <p>This policy applies to the Chrome extension “匣藏 - 跨平台收藏” (ID <code>jhhfpbbmjkneelmffnkghbjkkogmhclo</code>). “Cross-platform” means you may save content from any website. It does <strong>not</strong> mean cloud sync across devices.</p>
       <p>Chrome Web Store policy: if a product handles user data, the privacy policy must comprehensively disclose <strong>collection, processing, storage, and sharing</strong>, including every party with whom data is shared. This English section is complete, not a summary.</p>
@@ -154,6 +158,8 @@
         <li>Derive and verify lock passwords locally (unlock state lives only in the current browser session)</li>
         <li>Keep deleted items in a local trash for 15 days, then delete them</li>
         <li>If a site icon URL is missing, generate a letter icon locally — no Google (or other) favicon service is queried</li>
+        <li>A YouTube link with no cover gets YouTube’s standard thumbnail address (<code>i.ytimg.com</code>), built locally from the video id and stored on that item. Opening the library loads that image from YouTube. No oEmbed or other API is called</li>
+        <li>A Bilibili video link with no cover is looked up once on Bilibili’s public video API (<code>api.bilibili.com</code>) when you save or import it, or the first time you open the library to fill older items. Only the BV or av id is sent, to read the cover address, which is stored locally. Opening the library then loads that image from <code>hdslb.com</code> without a Referer, which Bilibili requires in order to show it</li>
       </ul>
       <p>The only purpose is the disclosed single purpose: local bookmarking. Data is not used for ads, analytics, profiling, personalization, credit, lending, or other products.</p>
       <p>Use of information complies with the Chrome Web Store User Data Policy, including the Limited Use requirements.</p>
@@ -161,7 +167,7 @@
       <h2>4. Storage</h2>
       <table>
         <tr><th>What</th><th>Where</th><th>Leaves the device?</th><th>Retention</th></tr>
-        <tr><td>Items, collections, rules, image data</td><td>IndexedDB on this device (database name xiacang)</td><td>No</td><td>Until you delete it, empty trash, or uninstall</td></tr>
+        <tr><td>Items, collections, rules, image data</td><td>IndexedDB on this device (database name xiacang)</td><td>No</td><td>Until you delete it, clear all saves in Settings, empty Trash, or uninstall</td></tr>
         <tr><td>Settings</td><td>chrome.storage.local</td><td>No</td><td>Until you change it or uninstall</td></tr>
         <tr><td>Unlock state for locked collections</td><td>chrome.storage.session</td><td>No</td><td>Ends when the browser session ends</td></tr>
         <tr><td>JSON / bookmark / folder backups you export</td><td>A path you choose on this device</td><td>No, unless you copy the file yourself</td><td>You decide</td></tr>
@@ -179,6 +185,7 @@
         <tr><td>You open a saved link</td><td>That website</td><td>A normal page visit</td><td>No — you click</td></tr>
         <tr><td>You play a saved video in the library</td><td>YouTube / Bilibili / Youku, etc.</td><td>The embed request for that video</td><td>No — you click play</td></tr>
         <tr><td>An item already stores a remote cover or original-site icon URL</td><td>The site that hosts that image</td><td>The browser loads the image</td><td>Only if that item has a remote image URL</td></tr>
+        <tr><td>You save or import a Bilibili video that has no cover, or you open the library once to fill older items like that</td><td>Bilibili’s public API, api.bilibili.com</td><td>The video’s BV or av id</td><td>No — once, only to fill a missing cover</td></tr>
         <tr><td>You send an exported backup to someone else</td><td>The recipient you chose</td><td>The file you exported</td><td>No</td></tr>
       </table>
       <p>For in-library YouTube playback, the extension only adds the Referer YouTube requires on embed requests initiated by the extension. It does not rewrite your ordinary browsing.</p>
@@ -197,6 +204,7 @@
       <h2>7. Your controls</h2>
       <ul>
         <li>Edit or delete any item. Deleted items go to Trash for 15 days, or you can delete them immediately.</li>
+        <li>Settings → Clear all saves permanently deletes every item, Trash and local page screenshots after two confirmations and a 10-second wait. Collections, flows and settings stay.</li>
         <li>Export / import JSON backups, or write a backup to a local folder, from Options.</li>
         <li>Uninstalling removes the extension’s local data.</li>
         <li>Privacy requests: <a href="mailto:iclzh@gmail.com">iclzh@gmail.com</a>.</li>
